@@ -1,0 +1,32 @@
+{
+  "mob": {
+    "player": {
+      "graphics": {
+        "char": "@"
+      },
+      "stats": {
+        "hp": 100,
+        "spd": 2
+      }
+    },
+    "goblin": {
+      "graphics": {
+        "char": "g"
+      },
+      "stats": {
+        "hp": 50,
+        "spd": 3
+      }
+    }
+  },
+  "terrain": {
+    "stone_wall": {
+      "graphics": {
+        "char": "#"
+      },
+      "stats": {
+        "hp": 1000
+      }
+    }
+  }
+}

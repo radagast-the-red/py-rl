@@ -7,29 +7,33 @@ import time
 
 v0.1
 
-- generate a simple map
-- put down the player
-- let the player walk around
-- implement proper turn handling
+initializing
+- create the player mob
+
+
+
+game loop
+IF THE PLAYER IS DOING SOMETHING
+- Simulate all entities
+- Count down player action time
+IF THE PLAYER IS DONE WITH AN ACT
+- reflect the player's action
+- draw stuff
+- prompt for a new act
 
 
 """
 
 
-def draw_zone(screen, zone):
-    x = zone.w
-    y = zone.h
-    # going row by row
-    for i in range(0, y-1):
-        # draw a row
-        for j in range(0, x-1):
-            obj = zone.get(j, i)
-            screen.print_at(obj.char, j, i)
-    screen.refresh()
-
-
 def main_loop(screen):
-    draw_zone(screen, zonehandler.ZoneHandler(20, 20, "Gorgos"))
-    time.sleep(10)
+
+    el = entities.EntityLoader()
+    zh = zonehandler.ZoneHandler(20, 20, "Gorgo")
+
+    player = el.load_entity("player", "mob")
+    zh.set(1, 0, player)
+
+    zh.draw_zone(screen)
+    time.sleep(700)
 
 Screen.wrapper(main_loop)
