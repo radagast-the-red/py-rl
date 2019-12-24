@@ -7,14 +7,14 @@ class ZoneHandler:
     """
     zoneArray = []
 
-    def __init__(self, h, w, default_terrain):
+    def __init__(self, h, w):
         self.h = h
         self.w = w
         for y in range(0, h):
             level = []
             for x in range(0, w):
-                # TODO: add entity type loader using JSON
-                level.append(entities.Terrain(x, y, 100, default_terrain, 'T'))
+                # TODO: add support for entity type loader using JSON
+                level.append(entities.Terrain(x, y, 100, "The Abyss", ' '))
             self.zoneArray.append(level)
 
     def get(self, x, y):
@@ -22,7 +22,7 @@ class ZoneHandler:
 
     def set(self, x, y, entity):
         self.zoneArray[x][y] = entity
-        # as a backup, update the entity's new location
+        # The entity has its new location set
         entity.x = x
         entity.y = y
 

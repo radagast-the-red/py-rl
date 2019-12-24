@@ -28,5 +28,15 @@
         "hp": 1000
       }
     }
+  },
+  "floor": {
+    "stone_floor": {
+      "graphics": {
+        "char": "."
+      },
+      "stats": {
+        "hp": 1000
+      }
+    }
   }
 }
